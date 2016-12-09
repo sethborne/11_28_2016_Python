@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>Global Counter</h1>
+        <h3>{{ counter }} times (global)</h3>
+        <a href="/ninja"><button type="button" name="button">Ninja</button></a>
+        <a href="/hacker"><button type="button" name="button">Hacker</button></a>
+    </div>
+    <div class="main">
+        <h1>Session Counter</h1>
+        <h3>{{ session['count'] }} times (local)</h3>
+        <a href="/ninja2"><button type="button" name="button">Ninja</button></a>
+        <a href="/hacker2"><button type="button" name="button">Hacker</button></a>
+    </div>
+    <div class="main">
+        <h3>SuPer HaX0R (form method)</h3>
+        <form class="" action="form" method="post">
+            <input type="hidden" name="action" value="ninja">
+            <input type="submit" name="" value="Ninja">
+        </form>
+        <form class="" action="form" method="post">
+            <input type="hidden" name="action" value="hacker">
+            <input type="submit" name="" value="Hacker">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Time Display</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'timedisplay/css/styles.css' %}" media="screen" title="no title" charset="utf-8">
+    <meta http-equiv="refresh" content="1">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="border dt">
+            <p>The current date and time:</p>
+        </div>
+        <div class="border main">
+            {% load tz %} {% localtime on %}
+            <h1>{{time|date:"N d, Y"}}<br>{{time|date:"H:m:s"}}</h1> {% endlocaltime %}
+        </div>
+    </div>
+</body>
+
+</html>

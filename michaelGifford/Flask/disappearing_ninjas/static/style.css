@@ -1,0 +1,42 @@
+@import url('normalize.css');
+
+body {
+    background-color: #111;
+    color: #fff;
+    margin: 20px;
+}
+
+img {
+    width: 280px;
+    border-width: 3px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}
+
+.black {
+    background-color: black;
+}
+
+.main {
+    margin-auto;
+    text-align: center;
+    padding: 12px;
+}

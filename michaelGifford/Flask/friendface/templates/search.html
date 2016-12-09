@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to FriendFace!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="script/javascript" href="">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo" class="inline">FriendFace</div>
+        <div id="search" class="inline">
+            <form action="/search" method="post">
+                <input type="hidden" name="form" value="search">
+                <input type="text" placeholder="Search" name="content" class="rounded">
+            </form>
+        </div>
+        <div id="user" class="inline">
+            <p>Welcome, {{user[0]['first_name']}}</p>
+            <p class="inline">
+                <form action="/logout" method="post"><input type="submit" value="Signout"></form>
+            </p>
+        </div>
+    </div>
+    <div id="main">
+        <div id="compose" class="postbox border rounded">
+            <div class="composebox">
+                <div class="avatar inline"><img src=" " alt=" ">
+                </div>
+                <div class="inline">
+                    <form action="/process" method="post">
+                        <input type="hidden" name="form" value="post">
+                        <input type="text" placeholder="What's on your mind?" name="content"><input type="submit" value="Post" class="rounded">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% for post in posts %}
+        <div class="postbox border rounded">
+            <div class="head">
+                <div class="avatar inline"><img src="" alt="">
+                </div>
+                <div class="inline">
+                    <p class="username inline"><a href="/profile/{{post['user_id']}}">{{post['first_name']}} {{post['last_name']}}</a></p>
+                    <p class="meta">{{post['created_at']}}</p>
+                </div>
+
+                <p class="post inline">{{post['content']}}</p>
+                <div class="activity">
+
+                </div>
+            </div>
+            <div class="comments">
+                {% for comment in comments[post['id']] %} {% if 'id' in comment %}
+                <div class="commentbox">
+                    <div class="avatar inline"><img src="" alt=""></div>
+                    <div class="inline">
+                        <p><span class="username"><a href="">{{comment['first_name']}} {{comment['last_name']}}</a></span> {{comment['comment']}}</p>
+                        <p class="meta inine">{{comment['created_at']}}</p>
+                    </div>
+
+                </div>
+                {% endif %} {% endfor %}
+
+                <div class="makecommentbox">
+                    <div class="avatar inline"></div>
+                    <div class="makecomment inline">
+                        <form action="/process" method="post">
+                            <input type="hidden" name="form" value="comment">
+                            <input type="hidden" name="post_id" value="{{post['id']}}">
+                            <input type="text" name="content" placeholder="Write a comment ...">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %} {% with messages = get_flashed_messages() %} {% if messages %}
+        <div id="flash" class="border rounded">
+            <ul>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %} {% endwith %}
+    </div>
+    <div id="footer">
+        <p>&copy; 2016 John Truong and Michael Gifford</p>
+    </div>
+</body>
+
+</html>

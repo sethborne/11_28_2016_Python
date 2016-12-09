@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to FriendFace!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="script/javascript" href="">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo" class="inline">FriendFace</div>
+        <div id="search" class="inline">
+            <form action=""><input type="text" placeholder="Search" class="rounded"></form>
+        </div>
+        <div id="user" class="inline">
+            <p>Welcome, Michael</p>
+        </div>
+    </div>
+    <div id="main">
+        <div id="compose" class="postbox border rounded">
+            <div class="composebox">
+                <div class="avatar inline"><img src="" alt="">
+                </div>
+                <div class="inline">
+                    <form action=""><input type="text" placeholder="What's on your mind?"><input type="submit" value="Post" class="rounded"></form>
+                </div>
+            </div>
+        </div>
+        <div class="postbox border rounded">
+            <div class="head">
+                <div class="avatar inline"><img src="" alt="">
+                </div>
+                <div class="inline">
+                    <p class="username inline"><a href="">Michael</a></p>
+                    <p class="meta">15:03 Dec 3 2016</p>
+                </div>
+
+                <p class="post inline">This is my post!</p>
+                <div class="activity">
+                    <p>Like</p>
+                </div>
+            </div>
+            <div class="comments">
+
+                <div class="commentbox">
+                    <div class="avatar inline"><img src="" alt=""></div>
+                    <div class="inline">
+                        <p><span class="username"><a href="">John</a></span> Nice!</p>
+                        <p class="meta inine">15:09 Dec 3 2016</p>
+                    </div>
+
+                </div>
+
+                <div class="makecommentbox">
+                    <div class="avatar inline"></div>
+                    <div class="makecomment inline">
+                        <form action=""><input type="text" placeholder="Write a comment ..."></form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="flash" class="border rounded">
+            <ul>
+                <li>This is a flash message!</li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2016 John Truong and Michael Gifford</p>
+    </div>
+</body>
+
+</html>
+<div id="footer"></div>
+</body>
+
+</html>

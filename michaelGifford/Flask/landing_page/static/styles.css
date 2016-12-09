@@ -1,0 +1,40 @@
+@import url('normalize.css');
+
+body {
+    background-color: #111;
+    color: #fff;
+    margin: 20px;
+}
+
+a {
+    color: #fff;
+}
+
+p {
+    line-height: 1.4;
+    font-weight: lighter;
+}
+
+label {
+    margin: 6px;
+}
+
+input {
+    display: block;
+    margin: 6px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 6px;
+}
+
+input:focus {
+    box-shadow: 0 0 4px #9c0000;
+}
+
+img {
+    width: 280px;
+    float: right;
+    border: 1px solid #fff;
+    margin: 6px;
+}

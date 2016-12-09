@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Dojo Survey | Result</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Registration Form | Result</h1>
+            <p>Name: {{ session['first_name'] }} {{ session['last_name'] }}</p>
+            <p>Email: {{ session['email'] }}</p>
+            <p>Birth Date: {{ session['birth_date'] }}</p>
+            <p>Password: {{ session['password_status'] }}</p>
+
+        <a href="/"><button type="button" name="button">Go Back</button></a>
+
+    </body>
+</html>

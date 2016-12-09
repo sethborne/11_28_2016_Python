@@ -1,0 +1,61 @@
+@import url('normalize.css');
+
+body {
+    background-color: #eee;
+    color: #111;
+    margin: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    line-height: 1.4;
+    font-weight: lighter;
+}
+
+label {
+    margin: 6px;
+}
+
+textarea, select, input, button {
+    display: block;
+    margin: 6px;
+    background-color: navy;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 6px;
+
+}
+
+textarea:focus, select:focus, input:focus, button:hover {
+    box-shadow: 0 0 4px navy;
+}
+
+img {
+    width: 280px;
+    float: right;
+    border: 1px solid #fff;
+    margin: 6px;
+}
+
+.copyright {
+    font-size: 10px;
+}
+
+#header {
+    background-color: navy;
+    color: #fff;
+    margin: 0;
+}
+
+h1 {
+    font-size: 22px;
+    padding: 6px;
+}
