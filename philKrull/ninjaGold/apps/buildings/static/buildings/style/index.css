@@ -1,0 +1,29 @@
+.container{
+  width: 970px;
+  margin: 0 auto;
+}
+.building{
+  border: 1px solid black;
+  height: 175px;
+  width: 200px;
+  text-align: center;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.activites{
+  height: 200px;
+  width: 875px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+span{
+  border: 1px solid black;
+  padding: 2px 20px;
+}
+.lost{
+  color: red;
+}
+.gained{
+  color: green;
+}

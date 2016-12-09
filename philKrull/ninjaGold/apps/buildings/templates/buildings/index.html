@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'buildings/style/index.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Your gold: <span>{{ request.session.totalGold }}</span></h1>
+      <form class="" action="/reset" method="post">
+        {% csrf_token %}
+        <input type="submit" name="submit" value="Play Again!">
+      </form>
+      <div class="building">
+        <h1>Farm</h1>
+        <h4>(earns 10 - 20 golds)</h4>
+        <form class="" action="/process_money" method="post">
+           {% csrf_token %}
+          <input type="hidden" name="building" value="farm">
+          <input type="submit" name="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="building">
+        <h1>Cave</h1>
+        <h4>(earns 5 - 10 golds)</h4>
+        <form class="" action="/process_money" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="building" value="cave">
+          <input type="submit" name="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="building">
+        <h1>House</h1>
+        <h4>(earns 2 - 5 golds)</h4>
+        <form class="" action="/process_money" method="post">
+           {% csrf_token %}
+          <input type="hidden" name="building" value="house">
+          <input type="submit" name="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="building">
+        <h1>Casino</h1>
+        <h4>(earns/loses 0 - 50 golds)</h4>
+        <form class="" action="/process_money" method="post">
+           {% csrf_token %}
+          <input type="hidden" name="building" value="casino">
+          <input type="submit" name="submit" value="Find Gold!">
+        </form>
+      </div>
+      <h3>Activities</h3>
+      <div class="activites">
+        {% if request.session.activites %}
+          {% for result in request.session.activites reversed %}
+            <p class={{result.class}}>{{ result.result }}</p>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
