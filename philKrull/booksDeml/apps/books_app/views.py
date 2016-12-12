@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Book, Author
+from django.contrib import messages
 # Create your views here.
 def index(request):
     context = {
@@ -9,7 +10,11 @@ def index(request):
     return render(request, 'books_app/index.html', context)
 
 def create_author(request):
-    Author.objects.create(name = request.POST['name'])
+    response = Author.objects.add_author(request.POST)
+    if not response['status']:
+        for error in response['errors']:
+            messages.error(request, error)
+    # Author.objects.create(name = request.POST['name'])
     return redirect('/')
 
 def create_book(request):
