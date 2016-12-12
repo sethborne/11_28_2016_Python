@@ -1,0 +1,29 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: sans-serif;
+}
+.container {
+    width: 66%;
+    margin: auto;
+    text-align: center;
+    margin-top: 33%;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 50px;
+}
+
+input {
+    background-color: crimson;
+    color: #fff;
+    border: 0;
+    padding: 15px 20px;
+    font-size: 50px;
+    border-radius: 12px;
+}
+
+input:hover {
+    background-color: red;
+}

@@ -1,0 +1,17 @@
+<html>
+    <head>
+       <title>Dojo Survey | Result</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Dojo Survey | Result</h1>
+
+        <p>Name: {{ form['name'] }}</p>
+        <p>Dojo: {{ form['dojo'] }}</p>
+        <p>Language: {{ form['language'] }}</p>
+        <p>Comment: {{ form['comment'] }}</p>
+
+        <a href="/"><button type="button" name="button">Go Back</button></a>
+
+    </body>
+</html>
