@@ -11,7 +11,7 @@
         <p>{{ message }}</p>
       {% endfor %}
     {% endif %}
-    <form class="" action="/create_author" method="post">
+    <form class="" action="{% url 'books:create_author' %}" method="post">
       {% csrf_token %}
       <input type="text" name="name" value="">
       <input type="submit" name="submit" value="Add Author">
@@ -30,7 +30,7 @@
   </ul>
   {% endif %}
   <h1>Add books</h1>
-  <form class="" action="create_book" method="post">
+  <form class="" action="{% url 'books:create_book' %}" method="post">
     {% csrf_token %}
     <p>Book Title: <input type="text" name="title" value=""></p>
     <p>Author: <select class="" name="author">
@@ -47,6 +47,39 @@
       <li>{{ book.author.name }} wrote {{ book.title }}</li>
       {% endfor %}
   </ul>
+  <h1>Add a publisher</h1>
+    <form class="" action="{% url 'publishers:create_publisher' %}" method="post">
+      {% csrf_token %}
+      <p>Name: <input type="text" name="name" value=""></p>
+      <input type="submit" name="" value="Add Publisher">
+    </form>
   {% endif %}
+  <h1>Add books to publishers</h1>
+    <form class="" action="{% url 'publishers:add_book_to_publisher' %}" method="post">
+      {% csrf_token %}
+      <select class="" name="book">
+        {% for book in all_books %}
+          <option value="{{ book.id }}">{{ book.title }}</option>
+        {% endfor %}
+      </select>
+      <select class="" name="publisher">
+        {% for publisher in all_publishers %}
+          <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="add_book_to_publisher">
+    </form>
+    <h1>Publishers have Books</h1>
+    <ul>
+      {% for publisher in all_publishers %}
+        <li>{{publisher.name}}</li>
+          <ul>
+            {% for book in publisher.books.all %}
+              <li>{{ book.title }}</li>
+            {% endfor %}
+          </ul>
+
+      {% endfor %}
+    </ul>
   </body>
 </html>
