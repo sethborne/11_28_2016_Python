@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-mail Validation</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'emailcheck/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div id="container">
+        {% if 'email' in request.session %}
+        <h3>The e-mail address {{ request.session.email }} you entered is valid!</h3>
+        {% endif %}
+
+        <h3>Here are the e-mail addresses of all users!</h3>
+
+        {% for email in emails reversed %}
+        <p>{{ email.email }} {{ email.created_at }} <a href="delete/{{ email.id }}"><button>Delete this address</button></a></p>
+        {% endfor %}
+        <a href="/">Back to e-mail entry</a>
+    </div>
+</body>
+</html>
