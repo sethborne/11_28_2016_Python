@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="script" href="{{ url_for('static', filename='jquery-3.1.1-min.js') }}">
+    <link rel="script" href="{{ url_for('static', filename='app.js') }}">
+</head>
+
+<body>
+
+
+    <div class="main">
+        <h1>Great Number Game</h1>
+        <!-- <h2>{{ session['randomNum']}}</h2> -->
+        <h4>Guess a number between 1 and 100.</h4>
+        <p class="{%if session['message']=='Too low!' or session['message']=='Too high!'%}incorrect{%elif session['message'=='Hello']%}{%else%}correct{%endif%}">{{session['message']}}</p>
+        <form class="" action="guess" method="post">
+            <input type="text" name="guess" value="">
+            <input type="submit" name="" value="Guess!">
+        </form>
+    </div>
+</body>
+
+</html>

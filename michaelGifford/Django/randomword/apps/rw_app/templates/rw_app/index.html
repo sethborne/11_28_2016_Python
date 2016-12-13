@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {%load staticfiles%}
+        <link rel="stylesheet" href="{%static 'rw_app/css/style.css'%}">
+        <title>Random Word</title>
+    </head>
+    <body>
+        <div class="container">
+            <p>Random word (attempt #{{request.session.count}})</p>
+                <div class="wordbox"><h1>{{request.session.random}}</h1></div>
+            <form action="/random" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Generate">
+            </form>
+        </div>
+    </body>
+</html>
