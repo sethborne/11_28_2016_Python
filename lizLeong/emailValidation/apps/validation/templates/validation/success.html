@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'validation\css\style.css' %}">
+        <title>Success!</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Success!</h3>
+            <p class = "alert green">The email you entered is a valid email! Thank you!</p>
+            <p class="bold">Email addresses entered:</p>
+            <hr>
+            {% for email in emails %}
+                <p class="left">{{ email.email }}</p> <p class="right">{{email.created_at}} </p>
+            {% endfor %}
+            <br>
+            <a href="/"><button class="button">Back</button></a>
+        </div>
+    </body>
+</html>

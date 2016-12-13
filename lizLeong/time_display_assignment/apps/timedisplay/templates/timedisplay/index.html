@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Time Display</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'timedisplay/css/style.css' %}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="line">
+                <h3>The time and date when you last loaded the page</h3>
+                <span class="text html basic">
+                    <span>{{ time }}</span>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
