@@ -1,14 +1,14 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+# to use bcrypt
+import bcrypt
 # Create your models here.
 class authorManager(models.Manager):
     def add_author(self, postData):
         errors = []
         if not len(postData['name']):
             errors.append('Author must have a name!')
-
         response = {}
         if errors:
             response['status'] = False
