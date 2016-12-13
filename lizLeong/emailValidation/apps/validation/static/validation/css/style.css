@@ -1,0 +1,62 @@
+#wrapper{
+    width: 500px;
+    margin: auto;
+    border: 5px solid red;
+    padding: 20px;
+}
+
+.button{
+    background-color: white;
+    /*color: red;*/
+    border: 2px solid red;
+}
+
+button{
+    margin-left: 45%;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 400px;
+    height: 400px;
+    margin-left: 10%;
+}
+
+h2{
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+hr{
+    border-color: red;
+}
+
+.left{
+    width: 40%;
+    display: inline-block;
+}
+
+.right{
+    width: 40%;
+    display: inline-block;
+}
+
+.green{
+    border: 1px solid darkgreen;
+    background-color: lightgreen;
+    color: darkgreen;
+    padding: 5px;
+}
+
+.red{
+    border: 1px solid darkred;
+    background-color: pink;
+    color: darkred;
+    padding: 5px;
+}

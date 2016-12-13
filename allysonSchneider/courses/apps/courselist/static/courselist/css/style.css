@@ -1,0 +1,17 @@
+body {
+    background-color: #00967D;
+    font-family: arial, sans-serif;
+}
+
+a {
+    color: #65B7A9;
+    text-decoration: none;
+    font-weight: bold;
+}
+#container {
+    margin: auto;
+    width: 970px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #65B7A9;
+}

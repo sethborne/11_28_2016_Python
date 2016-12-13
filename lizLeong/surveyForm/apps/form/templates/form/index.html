@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'form\css\style.css' %}">
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2 class="center">Dojo Survey!</h2>
+            {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+            {% endif %}
+            <form action="/survey/process" method="post">
+                <label class="left">Your name: </label><input type="text" name="name" class="right">
+                <br>
+                <label class="left">Location: </label><select name="location" class="right">
+                    <option value="Seattle">Seattle</option>
+                    <option value="San Francisco">San Francisco</option>
+                    <option value="Xiangyang">Xiangyang</option>
+                    <option value="Tokyo">Tokyo</option>
+                </select>
+                <br>
+                <label class="left">Favorite Language: </label><select name="language" class="right">
+                    <option value="Japanese">Japanese</option>
+                    <option value="C">C</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Yava">Java</option>
+                </select>
+                <br>
+                <label class="left">Comments: </label><input type="textarea" name="comments" class="right">
+                <br>
+                {% csrf_token %}
+                <input type="submit" class="center">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'form\css\style.css' %}">
+        <title>Results</title>
+    </head>
+    <body>
+        <div id="alert">
+            <p>Thanks for submitting th this form! You have submitted this form {{ request.session.count }} time(s) now (What a life)</p>
+        </div>
+        <div id="wrapper">
+            <h3 class="center">Submitted Information</h3>
+            <p class="left">Name: </p><p class="right">{{request.session.name}}</p>
+            <p class="left">Location: </p><p class="right">{{request.session.location}}</p>
+            <p class="left">Favorite Language: </p><p class="right">{{request.session.language}}</p>
+            <p class="left">Comments: </p><p class="right">{{request.session.comment}}</p>
+        </div>
+    </body>
+</html>
