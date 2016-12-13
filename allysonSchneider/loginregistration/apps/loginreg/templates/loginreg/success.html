@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thanks for visiting, {{ request.session.first_name }}!</h1>
+    <p>You are now logged in.</p>
+
+
+    <!-- {% for user in users reversed %}
+<p>{{ user.first_name }} {{ user.last_name }} {{ user.email }} {{ user.password }}{{ user.created_at }} <a href="delete/{{ user.id }}"><button>Delete this address</button></a></p>
+{% endfor %} -->
+</body>
+</html>
